@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+<h1>Wlecom, {{user}}</h1>
+
+
+<h3> Url table</h3>
+
+{%block content%}
+
+
+
+<!-- <table class = 'table '>
+<tr>
+   <th>URL</th>
+   <th>short</th>
+ </tr>
+{%for a in urls%}
+
+    <tr>
+        <td>{{a.url}}</td>
+        <td>{{a.short}}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+<table class="table table-striped table-inverse">
+<thead class="thead-inverse">
+<tr>
+  <th class="bg-faded">#</th>
+  <th class="bg-faded">URL</th>
+  <th class="bg-faded">Shorten</th>
+</tr>
+</thead>
+<tbody>
+{%for i in urls%}
+<tr>
+  <th scope="row">{{forloop.counter}}</th>
+  <td>{{i.url}}</td>
+    <td>{{i.short}}</td>
+</tr>
+{%endfor%}
+
+</tbody>
+</table>
+<h4> add new link into the database</h4>
+<form method="GET" action= "/addurl/">{% csrf_token %}
+    <button class = 'btn btn-primary' id="btn" type= "submit" value="Submit">add new URL</button>
+</form>
+
+{%endblock%}

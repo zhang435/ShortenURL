@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block content%}
+<title>  add new url </title>
+<form method = "POST" action = "/addurl/">{% csrf_token %}
+    {{form.as_p}}
+<form method = "POST" action = "/addurl/">{% csrf_token %}
+<button class = 'btn btn-primary' id="btn" type= "submit" value="Submit">Add</button>
+</form>
+{%endblock%}

@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{%block content%}
+<form method="POST" , action="">{% csrf_token %}
+    <!-- <h3>Username</h3>
+    <input id="username" placeholder="Username" type="text" name="username" required>
+    <h4 style="color:red;">{{already}}</h4>
+    <h3>password</h3>
+
+    <input id="password" placeholder="Password" type="text" name= "password" required>
+    <h4 style="color:red;">{{ps}}</h4>
+    <h3>password again</h3>
+    <input id="password2" placeholder="Password2" type="text" name="password2" required>
+    <br>
+    <h3>email</h3>
+    <input id="email" placeholder="Email" type="text" name="email" required>
+    <br> -->
+
+    <!-- {{form.as_p}} -->
+    {% for field in form %}
+    <div>
+
+        {{ field.label_tag }}{{ field }}
+        {{ field.errors }}
+    </div>
+{% endfor %}
+<input class = 'btn btn-primary'type="submit" value="Sign Up" />
+
+</form>
+
+
+{%endblock%}

@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<form method="GET" action= "/userregister/">{% csrf_token %}
+
+    <button class="btn btn-lg btn-primary" id="btn" type= "submit" value="Submit">register</button>
+</form>
+
+{%endblock%}

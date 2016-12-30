@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="http://winterbash2016.stackexchange.com/api/current-hats?callback=winterBashCurrentHats147019&amp;userids=147019&amp;host=stackoverflow.com&amp;_=1482964762611"></script><script type="text/javascript" async="" src="http://engine.adzerk.net/ados?t=1482964763343&amp;request={%22Placements%22:[{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1806113945%22,%22AT%22:4,%22Z%22:[43]},{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1048057229%22,%22AT%22:4,%22Z%22:[44]},{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1913196519%22,%22ATA%22:[5,17,2221],%22Z%22:[45]}],%22Keywords%22:%22python%2Cdjango%2Cdjango-models%2Cdjango-forms%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.com%2F%22,%22IsAsync%22:true}"></script>
+
+<title>python - Django ModelForm to have a hidden input - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a)">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Django ModelForm to have a hidden input">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="So I have my TagStatus model. I&#39;m trying to make a ModelForm for it. However, my form requires that the hidden input be populated with the {{ tag.name }}. I&#39;ve been looking through the docs and I d...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input">
+    <link rel="canonical" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input">
+
+    
+    
+    <script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/quant.js"></script><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/beacon.js"></script><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/ados.js"></script><script src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./python - Django ModelForm to have a hidden input - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Django ModelForm to have a hidden input&#39;" href="http://stackoverflow.com/feeds/question/15795869">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:15795869});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '15795869');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+            <script>
+                StackExchange.ready(function () {
+                    try {
+                        if (!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGTransform)
+                            return;
+                    } catch (ex) {
+                        return;
+                    }
+                    var d = 100;
+                    $.ajax({url:"//cdn-prom.sstatic.net/WinterBash/js/qa-wb.js?v=8",cache:true,dataType:"script"}).done(function tryInit() {
+                        if (window.WinterBash) {
+                            WinterBash.core.init('winterbash2016.stackexchange.com', '//cdn-prom.sstatic.net/WinterBash/', '8');
+                        } else {
+                            if (d <= 800)
+                                setTimeout(tryInit, d);
+                            d *= 2;
+                        }
+                    });
+                });
+            </script>
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1482964762,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"fac90bf5ac50e2fe2118c9d7385a4854","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"question_page_hero":{"v":"delay_hero_3","g":1},"devstory_onboarding_exp":{"v":"g","g":1},"mobile_signup_link":{"v":"simplified_signup_form:rdn","g":1}}},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true,"enableNewHeaderDesign":true,"enableImgurHttps":true},"comments":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"analytics":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"50b5ced7e001","js/moderator.en.js":"9f3ffcf6092c","js/full-anon.en.js":"fb4377e5719d","js/full.en.js":"f0fdccb9e5de","js/wmd.en.js":"b1bf3b6b81b1","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"20710353f000","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"679047593031","js/tageditornew.en.js":"15fc677e2435","js/inline-tag-editing.en.js":"ada30ae89544","js/revisions.en.js":"47de10a8358f","js/review.en.js":"4860570a1e5b","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"317470dd4fa5","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"f4b2456abbcd","js/keyboard-shortcuts.en.js":"2d6fc9a97e37","js/external-editor.en.js":"235e80f649d7","js/external-editor.en.js":"235e80f649d7","js/snippet-javascript.en.js":"25d6d4214eed","js/snippet-javascript-codemirror.en.js":"68c50bd0c27a"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/external-editor.en.js"></script><link rel="stylesheet" type="text/css" href="./python - Django ModelForm to have a hidden input - Stack Overflow_files/wb-include.css"><script type="text/javascript" src="http://static.adzerk.net/Extensions/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link rel="stylesheet" href="./python - Django ModelForm to have a hidden input - Stack Overflow_files/jobs-multi.min.css" type="text/css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="http://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15795869%2fdjango-modelform-to-have-a-hidden-input" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="http://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 162 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15795869%2fdjango-modelform-to-have-a-hidden-input" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                        <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                            <li class="youarehere">
+        <a id="nav-questions" href="http://stackoverflow.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:3, destination:1})">
+        Questions
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:6})">
+        Jobs
+        </a>
+    </li>
+                            <li>
+        <a id="nav-docs" href="http://stackoverflow.com/documentation" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:7})">
+        Documentation
+        </a>
+    </li>
+                            <li>
+        <a id="nav-tags" href="http://stackoverflow.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                            <li>
+        <a id="nav-users" href="http://stackoverflow.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:3})">
+        Users
+        </a>
+    </li>
+
+                            <li>
+        <a id="nav-badges" href="http://stackoverflow.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:4})">
+        Badges
+        </a>
+    </li>
+
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+    <div id="herobox" class="alternate">
+        <div class="test"></div>
+            <div id="close">
+                <a title="click to minimize"><span>x</span> Dismiss</a>
+            </div>
+        <div class="content">
+            <b>Join the Stack Overflow Community</b>
+            <div class="separator"></div>
+            <div class="blurb">
+                Stack Overflow is a community of 6.5 million programmers, just like you, helping each other.
+                    <br>
+Join them; it only takes a minute:                    <br>
+            </div>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15795869%2fdjango-modelform-to-have-a-hidden-input" id="tell-me-more" class="button">Sign up</a>
+        </div>
+    </div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input" class="question-hyperlink">Django ModelForm to have a hidden input</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="15795869" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1806113945",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1806113945"><iframe id="ados_frame_adzerk1806113945_2467312" frameborder="0" scrolling="no" height="90" width="728" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/saved_resource.html"></iframe><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDM3LCJhdCI6NCwiYnQiOjAsImNtIjo0OTEzMDgsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNzIyNzc5LCJkaSI6ImU4NTc4M2U0M2M5OTRmMmI5NGRlYjk4OWMwNWZmYTRkIiwiZG0iOjEsImZjIjoyMDQ1NjM1LCJmbCI6MjQ2NzMxMiwiaXAiOiIxNDkuMTYwLjIyMy4xNjQiLCJrdyI6InB5dGhvbixkamFuZ28sZGphbmdvLW1vZGVscyxkamFuZ28tZm9ybXMiLCJudyI6MjIsInBjIjozLjMsImVjIjozLjMsInByIjo5NTYwNCwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtMTJjOTAyYjI1MDBjNDM4ODk5YzFhNmQwMjUxY2NiNDkiLCJ6biI6NDMsInRzIjoxNDgyOTY0NzYzNTk2LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxODA2MTEzOTQ1IiwiYmEiOjYsImZxIjowfQ&amp;s=fLsyTXOozunkD60P0AUEQgczsN0"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="15795869">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">34</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#">favorite</a>
+        <div class="favoritecount"><b>8</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>So I have my TagStatus model. I'm trying to make a ModelForm for it. However, my form requires that the hidden input be populated with the {{ tag.name }}. I've been looking through the docs and I don't know how to make the tag field a hidden input. Perhaps a ModelForm isn't the way to go?</p>
+
+<p><strong>models.py:</strong></p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">TagStatus</span><span class="pun">(</span><span class="pln">models</span><span class="pun">.</span><span class="typ">Model</span><span class="pun">):</span><span class="pln">
+    user </span><span class="pun">=</span><span class="pln"> models</span><span class="pun">.</span><span class="typ">ForeignKey</span><span class="pun">(</span><span class="typ">User</span><span class="pun">,</span><span class="pln"> null</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">,</span><span class="pln"> unique</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span><span class="pln">
+    status </span><span class="pun">=</span><span class="pln"> models</span><span class="pun">.</span><span class="typ">CharField</span><span class="pun">(</span><span class="pln">max_length</span><span class="pun">=</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> choices</span><span class="pun">=</span><span class="pln">tag_statuses</span><span class="pun">)</span><span class="pln">
+    tag </span><span class="pun">=</span><span class="pln"> models</span><span class="pun">.</span><span class="typ">ForeignKey</span><span class="pun">(</span><span class="typ">Tag</span><span class="pun">,</span><span class="pln"> null</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">,</span><span class="pln"> blank</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> __unicode__</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">status
+
+    </span><span class="kwd">def</span><span class="pln"> save</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> </span><span class="pun">*</span><span class="pln">args</span><span class="pun">,</span><span class="pln"> </span><span class="pun">**</span><span class="pln">kwargs</span><span class="pun">):</span><span class="pln">
+        super</span><span class="pun">(</span><span class="typ">TagStatus</span><span class="pun">,</span><span class="pln"> self</span><span class="pun">).</span><span class="pln">save</span><span class="pun">(*</span><span class="pln">args</span><span class="pun">,</span><span class="pln"> </span><span class="pun">**</span><span class="pln">kwargs</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">TagStatusForm</span><span class="pun">(</span><span class="pln">modelForm</span><span class="pun">):</span><span class="pln">
+    </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Meta</span><span class="pun">:</span><span class="pln">
+        model </span><span class="pun">=</span><span class="pln"> </span><span class="typ">TagStatus</span><span class="pln">
+        fields </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="str">'status'</span><span class="pun">,</span><span class="str">'tag'</span><span class="pun">)</span><span class="pln"> 
+        widgets </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             </span><span class="str">'select'</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Select</span><span class="pun">,</span><span class="pln">
+             </span><span class="str">'tag'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">???</span><span class="pln">
+        </span><span class="pun">}</span></code></pre>
+
+<p><strong>django views.py:</strong></p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="lit">@login_required</span><span class="pln">
+</span><span class="kwd">def</span><span class="pln"> tags</span><span class="pun">(</span><span class="pln">request</span><span class="pun">):</span><span class="pln">
+    all_tags </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Tag</span><span class="pun">.</span><span class="pln">objects</span><span class="pun">.</span><span class="pln">all</span><span class="pun">()</span><span class="pln">
+    context </span><span class="pun">=</span><span class="pln"> base_context</span><span class="pun">(</span><span class="pln">request</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> request</span><span class="pun">.</span><span class="pln">method </span><span class="pun">==</span><span class="pln"> </span><span class="str">'POST'</span><span class="pun">:</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="str">'status_check'</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> request</span><span class="pun">.</span><span class="pln">POST</span><span class="pun">:</span><span class="pln">
+            status_form </span><span class="pun">=</span><span class="pln"> </span><span class="typ">TagStatusForm</span><span class="pun">(</span><span class="pln">request</span><span class="pun">.</span><span class="pln">POST</span><span class="pun">)</span><span class="pln">
+            </span><span class="com">#if request.is_ajax():</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> status_form</span><span class="pun">.</span><span class="pln">is_valid</span><span class="pun">():</span><span class="pln">
+                status_form</span><span class="pun">.</span><span class="pln">save</span><span class="pun">()</span><span class="pln">
+                response </span><span class="pun">=</span><span class="pln"> simplejson</span><span class="pun">.</span><span class="pln">dumps</span><span class="pun">({</span><span class="str">"status"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Successfully changed status"</span><span class="pun">})</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pun">:</span><span class="pln">
+                response </span><span class="pun">=</span><span class="pln"> simplejson</span><span class="pun">.</span><span class="pln">dumps</span><span class="pun">({</span><span class="str">"status"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Error"</span><span class="pun">})</span><span class="pln">
+                </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">HttpResponse</span><span class="pln"> </span><span class="pun">(</span><span class="pln">response</span><span class="pun">,</span><span class="pln"> mimetype</span><span class="pun">=</span><span class="str">'application/json'</span><span class="pun">)</span><span class="pln">
+    status_form </span><span class="pun">=</span><span class="pln"> </span><span class="typ">TagStatusForm</span><span class="pun">()</span><span class="pln">
+    context</span><span class="pun">[</span><span class="str">'status_form'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> status_form
+    context</span><span class="pun">[</span><span class="str">'all_tags'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> all_tags
+    </span><span class="kwd">return</span><span class="pln"> render_to_response</span><span class="pun">(</span><span class="str">'tags/tags.html'</span><span class="pun">,</span><span class="pln"> context</span><span class="pun">,</span><span class="pln"> context_instance</span><span class="pun">=</span><span class="typ">RequestContext</span><span class="pun">(</span><span class="pln">request</span><span class="pun">))</span></code></pre>
+
+<p>template:</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="pun">{%</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> tag </span><span class="kwd">in</span><span class="pln"> all_tags </span><span class="pun">%}</span><span class="pln">
+</span><span class="pun">....</span><span class="pln">
+</span><span class="pun">&lt;</span><span class="pln">form </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"nice"</span><span class="pln"> id</span><span class="pun">=</span><span class="str">"status-form"</span><span class="pln"> method</span><span class="pun">=</span><span class="str">"POST"</span><span class="pln"> action</span><span class="pun">=</span><span class="str">""</span><span class="pun">&gt;</span><span class="pln">
+     </span><span class="pun">{%</span><span class="pln"> csrf_token </span><span class="pun">%}</span><span class="pln">
+      </span><span class="pun">&lt;</span><span class="pln">input type</span><span class="pun">=</span><span class="str">"hidden"</span><span class="pln"> name</span><span class="pun">=</span><span class="str">"status_check"</span><span class="pln"> </span><span class="pun">/&gt;</span><span class="pln">
+      </span><span class="pun">&lt;</span><span class="pln">input type</span><span class="pun">=</span><span class="str">'hidden'</span><span class="pln"> name</span><span class="pun">=</span><span class="str">"tag"</span><span class="pln"> value</span><span class="pun">=</span><span class="str">"{{ tag.name }}"</span><span class="pln"> </span><span class="pun">/&gt;</span><span class="pln">
+     </span><span class="pun">{{</span><span class="pln"> status_form</span><span class="pun">.</span><span class="pln">status </span><span class="pun">}}</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">form</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">...</span><span class="pln">
+</span><span class="pun">{%</span><span class="pln"> endfor </span><span class="pun">%}</span></code></pre>
+
+<p>How would I go about making a hidden input through a django ModelForm and then populate it through the template?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag js-gps-track" title="show questions tagged &#39;python&#39;" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/django" class="post-tag js-gps-track" title="show questions tagged &#39;django&#39;" rel="tag">django</a> <a href="http://stackoverflow.com/questions/tagged/django-models" class="post-tag js-gps-track" title="show questions tagged &#39;django-models&#39;" rel="tag">django-models</a> <a href="http://stackoverflow.com/questions/tagged/django-forms" class="post-tag js-gps-track" title="show questions tagged &#39;django-forms&#39;" rel="tag">django-forms</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/15795869" title="short permalink to this question" class="short-link" id="link-post-15795869">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15795869/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-04-03 19:06:39Z" class="relativetime">Apr 3 '13 at 19:06</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="http://stackoverflow.com/users/908392/modelesq"><div class="gravatar-wrapper-32"><img src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/d9cc0af7ed0b109d47effcd1a3be7ec4" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/908392/modelesq">Modelesq</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,209</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="44 bronze badges"><span class="badge3"></span><span class="badgecount">44</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15795869" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-22460742" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">What's wrong with what you have?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/104349/daniel-roseman" title="333,181 reputation" class="comment-user">Daniel Roseman</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#comment22460742_15795869"><span title="2013-04-03 19:10:13Z" class="relativetime-clean">Apr 3 '13 at 19:10</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15795869" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="23463004"></a>
+<div id="answer-23463004" class="answer accepted-answer" data-answerid="23463004" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="23463004">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">71</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="The question owner accepted this as the best answer Mar 27 at 23:48.">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>To make a field in a ModelField a hidden field, use a HiddenInput widget.  The ModelForm uses a sensible default widget for all the fields, you just need to override it when the object is constructed.</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">TagStatusForm</span><span class="pun">(</span><span class="pln">forms</span><span class="pun">.</span><span class="typ">ModelForm</span><span class="pun">):</span><span class="pln">
+    </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Meta</span><span class="pun">:</span><span class="pln">
+        model </span><span class="pun">=</span><span class="pln"> </span><span class="typ">TagStatus</span><span class="pln">
+        widgets </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">'tag'</span><span class="pun">:</span><span class="pln"> forms</span><span class="pun">.</span><span class="typ">HiddenInput</span><span class="pun">()}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/23463004" title="short permalink to this answer" class="short-link" id="link-post-23463004">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/23463004/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/23463004/revisions" title="show all edits to this post">edited <span title="2014-05-05 00:23:08Z" class="relativetime">May 5 '14 at 0:23</span></a>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-05-05 00:04:53Z" class="relativetime">May 5 '14 at 0:04</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="http://stackoverflow.com/users/257/josh"><div class="gravatar-wrapper-32"><img src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/92f446269f65ef4213e94bd99aa3e475" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/257/josh">Josh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,551</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="51 bronze badges"><span class="badge3"></span><span class="badgecount">51</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-23463004" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-23463004" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1048057229",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1048057229"></div>
+  
+<a name="15795924"></a>
+<div id="answer-15795924" class="answer" data-answerid="15795924" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="15795924">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">53</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There are 3 possible ways (AFAIK) to render hidden fields in Django -</p>
+
+<p><strong>1.</strong> You could declare a field normally in <code>forms.py</code> but in your templates html file use <code>{{ form.field.as_hidden }}</code></p>
+
+<p><strong>2.</strong> in <code>forms.py</code> directly use hidden input widget.</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyForm</span><span class="pun">(</span><span class="pln">forms</span><span class="pun">.</span><span class="typ">Form</span><span class="pun">):</span><span class="pln">
+    hidden_field </span><span class="pun">=</span><span class="pln"> forms</span><span class="pun">.</span><span class="typ">CharField</span><span class="pun">(</span><span class="pln">widget</span><span class="pun">=</span><span class="pln">forms</span><span class="pun">.</span><span class="typ">HiddenInput</span><span class="pun">())</span></code></pre>
+
+<p>Once you make the field a hidden input, you could populate the value of the field in templates. Now your hidden field is ready for rendering. </p>
+
+<p><strong>3.</strong> Regular form equivalent (thanks to @Modelesq for sharing this nugget). Here no Django is involved. Changes are done at HTML template level. <code>&lt;input type="hidden" name="tag" value="{{ tag.name }}" /&gt;</code></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15795924" title="short permalink to this answer" class="short-link" id="link-post-15795924">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15795924/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/15795924/revisions" title="show all edits to this post">edited <span title="2016-10-29 15:04:35Z" class="relativetime">Oct 29 at 15:04</span></a>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time" style="margin-left: 0px !important;">
+        answered <span title="2013-04-03 19:10:11Z" class="relativetime">Apr 3 '13 at 19:10</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="http://stackoverflow.com/users/147019/srikar-appal" style="display: inline;"><div class="hat" style="float: left; display: block; width: 0px; height: 0px; overflow: visible; position: relative; left: 27px; top: 19px;" data-hatid="25"><img src="data:image/svg+xml,%3Csvg%20viewBox%3D%2234.25%2022.375%20123.5%20147.25%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2211%22%3E%3Cg%20transform%3D%22%20translate(35.10592542669574%2022.777677200198568)%20scale(1.4943331183632946)%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bisolation%3Aisolate%3B%7D.cls-2%7Bfill%3A%23ffd633%3B%7D.cls-3%7Bfill%3A%23d99f22%3Bopacity%3A0.6%3B%7D.cls-4%7Bfill%3A%23fff%3Bopacity%3A0.59%3Bmix-blend-mode%3Aoverlay%3B%7D.cls-5%7Bfill%3A%23b5721c%3B%7D.cls-6%7Bfill%3A%23935512%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3E-%3C%2Ftitle%3E%3Cg%20class%3D%22cls-1%22%3E%3Cg%20data-name%3D%22Layer%202%22%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M19.25%2C42.92C11.65%2C42.92%2C4.46%2C33%2C1%2C23.71-.36%2C20.09-.33%2C17.16%2C1.1%2C15a6.75%2C6.75%2C0%2C0%2C1%2C5.11-2.86h13v5H6.4a1.75%2C1.75%2C0%2C0%2C0-1.17.65c-.45.72-.3%2C2.29.42%2C4.2%2C2.94%2C7.85%2C8.83%2C16%2C13.59%2C16Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M2%2C21.72a11.12%2C11.12%2C0%2C0%2C1-.69-7L1.1%2C15C-.33%2C17.16-.36%2C20.09%2C1%2C23.71%2C4.46%2C33%2C11.65%2C42.92%2C19.25%2C42.92V40.86C12%2C40%2C5.31%2C30.57%2C2%2C21.72Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M16.26%2C4.18V34.57a24.39%2C24.39%2C0%2C0%2C0%2C48.77%2C0V4.18Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M63%2C42.92v-5c5%2C0%2C10.83-8.29%2C13.71-16%2C.73-1.93.9-3.51.43-4.22a1.74%2C1.74%2C0%2C0%2C0-1.13-.63H63v-5h13.2A6.75%2C6.75%2C0%2C0%2C1%2C81.35%2C15c1.43%2C2.16%2C1.42%2C5.09.06%2C8.72C78.93%2C30.36%2C72%2C42.92%2C63%2C42.92Z%22%3E%3C%2Fpath%3E%3Cpolygon%20class%3D%22cls-2%22%20points%3D%2245.75%2081.09%2035.38%2081.09%2037.37%2057.43%2043.76%2057.43%22%3E%3C%2Fpolygon%3E%3Cpolygon%20class%3D%22cls-3%22%20points%3D%2244.1%2061.31%2037.08%2061.31%2037.32%2058.48%2040.65%2058.69%2043.86%2058.48%22%3E%3C%2Fpolygon%3E%3Crect%20class%3D%22cls-2%22%20x%3D%2212.7%22%20width%3D%2255.74%22%20height%3D%226.17%22%3E%3C%2Frect%3E%3Cpolygon%20class%3D%22cls-3%22%20points%3D%2265.03%2010.15%2016.26%206.17%2016.26%206.17%2065.03%206.17%22%3E%3C%2Fpolygon%3E%3Cpath%20class%3D%22cls-4%22%20d%3D%22M24.23%2C34.57V6.82l-8-.65v28.4A24.36%2C24.36%2C0%2C0%2C0%2C44.63%2C58.36%2C24.31%2C24.31%2C0%2C0%2C1%2C24.23%2C34.57Z%22%3E%3C%2Fpath%3E%3Cpolygon%20class%3D%22cls-4%22%20points%3D%2237.08%2061.91%2035.38%2081.81%2038.91%2081.81%2040.57%2061.91%22%3E%3C%2Fpolygon%3E%3Cpath%20class%3D%22cls-5%22%20d%3D%22M56.27%2C97.74H24.86a2.73%2C2.73%2C0%2C0%2C1-2.43-4l6.18-12.18A2.73%2C2.73%2C0%2C0%2C1%2C31%2C80.09h19a2.73%2C2.73%2C0%2C0%2C1%2C2.43%2C1.49L58.7%2C93.77A2.73%2C2.73%2C0%2C0%2C1%2C56.27%2C97.74Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22cls-6%22%20d%3D%22M58.67%2C93.5a2.64%2C2.64%2C0%2C0%2C1-2.34%2C1.25H24.92a2.64%2C2.64%2C0%2C0%2C1-2.34-1.25l-.1.23a2.76%2C2.76%2C0%2C0%2C0%2C2.43%2C4H56.33a2.76%2C2.76%2C0%2C0%2C0%2C2.43-4Z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="10" height="11" style="display: block;"></div><div class="gravatar-wrapper-32"><img src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/1c1f8cd6f9f39bc8868e023b272d28e1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/147019/srikar-appal">Srikar Appal</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 38,686" dir="ltr">38.7k</span><span title="32 gold badges"><span class="badge1"></span><span class="badgecount">32</span></span><span title="159 silver badges"><span class="badge2"></span><span class="badgecount">159</span></span><span title="223 bronze badges"><span class="badge3"></span><span class="badgecount">223</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15795924" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-22460823" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">9</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">How about I go about populating it? It's regular form equivalent would look like: <code>&lt;input type="hidden" name="tag" value="{{ tag.name }}" /&gt;</code></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/908392/modelesq" title="1,209 reputation" class="comment-user owner">Modelesq</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#comment22460823_15795924"><span title="2013-04-03 19:12:47Z" class="relativetime-clean">Apr 3 '13 at 19:12</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-22470786" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">yes that would work...</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/147019/srikar-appal" title="38,686 reputation" class="comment-user">Srikar Appal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#comment22470786_15795924"><span title="2013-04-04 02:07:25Z" class="relativetime-clean">Apr 4 '13 at 2:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-37768023" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Did you find how to populate ? using <code>{{ tag.name }}</code> doesn't seem to work. I myself need <code>{{ forloop.counter }}</code>…</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1506338/ehvince" title="4,240 reputation" class="comment-user">Ehvince</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#comment37768023_15795924"><span title="2014-06-25 16:16:07Z" class="relativetime-clean">Jun 25 '14 at 16:16</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-55159107" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Any chance you could add the template side of things?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1294864/bono" title="2,754 reputation" class="comment-user">Bono</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#comment55159107_15795924"><span title="2015-11-13 13:31:28Z" class="relativetime-clean">Nov 13 '15 at 13:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15795924" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/15795869/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="15795869">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="fac90bf5ac50e2fe2118c9d7385a4854">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15795869%2fdjango-modelform-to-have-a-hidden-input%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f15795869%2fdjango-modelform-to-have-a-hidden-input%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged &#39;python&#39;" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/django" class="post-tag" title="show questions tagged &#39;django&#39;" rel="tag">django</a> <a href="http://stackoverflow.com/questions/tagged/django-models" class="post-tag" title="show questions tagged &#39;django-models&#39;" rel="tag">django-models</a> <a href="http://stackoverflow.com/questions/tagged/django-forms" class="post-tag" title="show questions tagged &#39;django-forms&#39;" rel="tag">django-forms</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-04-03 19:06:39Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>38684 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input?lastactivity" class="lastactivity-link" title="2016-10-29 15:04:35Z">2 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1913196519",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1913196519"><iframe id="ados_frame_adzerk1913196519_2494200" frameborder="0" scrolling="no" height="250" width="300" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/saved_resource(1).html"></iframe><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDQ1LCJhdCI6NSwiYnQiOjAsImNtIjo0OTIxNzYsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNzMwMjQ3LCJkaSI6Ijc5MDNlZDFiNTRmNTQ5YTg5YzU0MzBjMjA4NDg0YTBhIiwiZG0iOjEsImZjIjoyMDUzOTI3LCJmbCI6MjQ5NDIwMCwiaXAiOiIxNDkuMTYwLjIyMy4xNjQiLCJrdyI6InB5dGhvbixkamFuZ28sZGphbmdvLW1vZGVscyxkamFuZ28tZm9ybXMiLCJtayI6ImRqYW5nby1tb2RlbHMsZGphbmdvLWZvcm1zIiwibnciOjIyLCJwYyI6NC40MywiZWMiOjQuNDMsInByIjo3NjUsInJ0IjoyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLTEyYzkwMmIyNTAwYzQzODg5OWMxYTZkMDI1MWNjYjQ5Iiwiem4iOjQ1LCJ0cyI6MTQ4Mjk2NDc2MzU5OSwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTkxMzE5NjUxOSIsImZxIjowfQ&amp;s=4eFCMkFO3-d17gAVerNyUvgMtnQ"></div>
+            <div id="hireme" class="clc-jobs-multi orange tagged"><a class="top " href="https://stackoverflow.com/jobs" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4_zr4RtfpH_Fg92yPDiUiYmBgUGAAQT4meayfWTIj9FgYDgBxAwsDAwNBRyployMQA7T_O1aDAya2gwMjCwMJw8Ft1-w3D-7zJ6RraCyJCM_Tz6ejYnBv4IZpOvroSapnZYP1BXtGSpe8v8-HDlN60gZAA&amp;cr=10440&amp;ct=1&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs&amp;sig=zg6Yqt8IYzeCHg"><span>Looking for a job?</span></a><div class="middle"><ul class="jobs"><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Software Engineer (Python, Linux) at Edgestream Partners, L.P.. Click to learn more." href="https://stackoverflow.com/jobs/125013/software-engineer-python-linux-edgestream-partners-lp" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4_zr4RtfpH_Fg92yPDiUiYmBgUGAAQT4meayfWTIj9FgYDgBxAwsDAwNBRyployMQA7T_O1aDAya2gwMjCwMJw8Ft1-w3D-7zJ6RraCyJCM_Tz6ejYnBv4IZpOvroSapnZYP1BXtGSpe8v8-HDlN60gZAA&amp;cr=11049&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F125013%2Fsoftware-engineer-python-linux-edgestream-partners-lp&amp;sig=ClD2UMYhTtpNAw"><div class="title">Software Engineer (Python, Linux)</div><div><span class="company">Edgestream Partners, L.P.</span><span class="location">Princeton, NJ</span></div><div class="opts"><span class="opt relocate">Relocation</span></div><span class="post-tag highlight">python</span><span class="post-tag">c</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=4_zr4RtfpH_Fg92yPDiUiYmBgUGAAQT4meayfWTIj9FgYDgBxAwsDAwNBRyployMQA7T_O1aDAya2gwMjCwMJw8Ft1-w3D-7zJ6RraCyJCM_Tz6ejYnBv4IZpOvroSapnZYP1BXtGSpe8v8-HDlN60gZAA&amp;cr=11049&amp;ct=-1&amp;sig=zckckl7DP69eJg" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Senior Engineer - Data Architecture at SingleComm. Click to learn more." href="https://stackoverflow.com/jobs/130646/senior-engineer-data-architecture-singlecomm" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4_zr4RtfpH_Fg92yPDiUiYmBgUGAAQT4meayfWTIj9FgYDgBxAwsDAwNBRyployMQA7T_O1aDAya2gwMjCwMJw8Ft1-w3D-7zJ6RraCyJCM_Tz6ejYnBv4IZpOvroSapnZYP1BXtGSpe8v8-HDlN60gZAA&amp;cr=227407&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F130646%2Fsenior-engineer-data-architecture-singlecomm&amp;sig=yeKnB-h8iZThWQ"><div class="title">Senior Engineer - Data Architecture</div><div><span class="company">SingleComm</span><span class="location">New York, NY</span></div><div class="opts"><span class="opt remote">Remote</span><span class="opt relocate">Relocation</span></div><span class="post-tag">sql</span><span class="post-tag">database</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=4_zr4RtfpH_Fg92yPDiUiYmBgUGAAQT4meayfWTIj9FgYDgBxAwsDAwNBRyployMQA7T_O1aDAya2gwMjCwMJw8Ft1-w3D-7zJ6RraCyJCM_Tz6ejYnBv4IZpOvroSapnZYP1BXtGSpe8v8-HDlN60gZAA&amp;cr=227407&amp;ct=-1&amp;sig=Mt9IUZoIOj46dA" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li></ul></div><img src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/impression.gif" class="impression" style="display: none;"></div>
+        <script>
+window.clcfl_request = 'ApqJgV5yL9QIAAAAAJ0G8QACAAAAAgAAAAAqAAAAfHB5dGhvbnxkamFuZ298ZGphbmdvLW1vZGVsc3xkamFuZ28tZm9ybXN8AJ_Du6fI6QwXnCE';
+;(function(n){var t,r,i;try{if(typeof[].indexOf!="function")return;if(window.attachEvent&&!window.addEventListener)return;if(n.allowed[0]!=="*"&&n.allowed.indexOf(location.hostname)===-1)return;t=window;t.clc=t.clc||{};r=t.clc_request||t.clcfl_request;r||void 0;t.clc.init=t.clc.init||[];t.clc.init.push(function(n){return n.load()});t.clc.options=n;i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}catch(u){void 0}}).call(null, {"azw":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","blog.codinghorror.com","talent.stackoverflow.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/markup.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=c1d06cbc75b3"});        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/24431827?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">10</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24431827/django-model-choice-field-depend-on-other-fields-choice?noredirect=1&amp;lq=1" class="question-hyperlink">Django model choice field - depend on other field's choice</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/23824615?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/23824615/django-form-render-form-changing-hiddeninput-value-in-the-template?noredirect=1&amp;lq=1" class="question-hyperlink">Django Form - Render Form changing hiddenInput Value in the template</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/38473957?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/38473957/how-to-add-text-box-next-to-a-radio-button?noredirect=1&amp;lq=1" class="question-hyperlink">How to add text box next to a radio button</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/31166955?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/31166955/django-form-submission-instance-of-class?noredirect=1&amp;lq=1" class="question-hyperlink">django form submission instance of class</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/38746054?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/38746054/formview-specify-which-fields-are-sent-in-the-post?noredirect=1&amp;lq=1" class="question-hyperlink">FormView - Specify which fields are sent in the POST</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/687295?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">366</div></a><a href="http://stackoverflow.com/questions/687295/how-do-i-do-a-not-equal-in-django-queryset-filtering?rq=1" class="question-hyperlink">How do I do a not equal in Django queryset filtering?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/732952?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">26</div></a><a href="http://stackoverflow.com/questions/732952/get-primary-key-after-saving-a-modelform-in-django?rq=1" class="question-hyperlink">Get Primary Key after Saving a ModelForm in Django</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/739260?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">59</div></a><a href="http://stackoverflow.com/questions/739260/customize-remove-django-select-box-blank-option?rq=1" class="question-hyperlink">Customize/remove Django select box blank option</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1268209?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/1268209/django-modelform-checkbox-widget?rq=1" class="question-hyperlink">Django ModelForm CheckBox Widget</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4788402?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="http://stackoverflow.com/questions/4788402/django-modelform-inheritance?rq=1" class="question-hyperlink">Django - modelform inheritance</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/6904436?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/6904436/modelforms-with-manytomany-relationship-models-in-django?rq=1" class="question-hyperlink">ModelForms with ManyToMany relationship Models in Django</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/8609192?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">387</div></a><a href="http://stackoverflow.com/questions/8609192/differentiate-null-true-blank-true-in-django?rq=1" class="question-hyperlink">differentiate null=True, blank=True in django</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/13373967?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/13373967/django-modelform-not-detecting-field?rq=1" class="question-hyperlink">Django ModelForm not detecting field</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/32007311?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/32007311/how-to-change-data-in-django-modelform?rq=1" class="question-hyperlink">How to change data in Django ModelForm?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/32015837?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/32015837/in-django-is-it-possible-to-have-several-models-field-mapping-to-a-single-field?rq=1" class="question-hyperlink">In Django, is it possible to have several models.Field mapping to a single field in a ModelForm?</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="http://outdoors.stackexchange.com/questions/14718/how-do-you-remove-a-fishhook-from-a-human" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you remove a fishhook from a human?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/333348/why-not-set-opensshs-maxsessions-to-1000000" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why not set OpenSSH's MaxSessions to 1000000?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/333275/delete-new-kernels-boot-full" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Delete new kernels /boot full
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/85106/when-to-use-the-emergency-brake-in-a-train" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When to use the emergency brake in a train?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/66088/how-do-i-prevent-flight-in-a-cyberpunk-future" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I prevent flight in a cyberpunk future?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/66096/encryption-in-the-19th-century" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Encryption in the 19th century
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/41364383/if-element-already-exists-in-array-dont-add-it-again" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If element already exists in array don't add it again
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/146595/second-order-sql-injection-protection" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Second order SQL injection protection
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="http://photo.stackexchange.com/questions/85726/ideal-way-to-focus-for-portrait-photography-using-a-prime-lens-with-narrow-depth" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Ideal way to focus for portrait photography using a prime lens with narrow depth of field?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/40288/how-do-manufacturers-detune-engines" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do manufacturers detune engines?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/74113/is-investing-a-good-idea-with-a-low-amount-of-money" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is investing a good idea with a low amount of money?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/105206/safe-way-to-remove-paint-from-ground-wire" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Safe way to remove paint from ground wire?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/113741/idiom-saying-for-brokerage-transaction-costs-translation-of-german-hin-und-he" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Idiom/saying for brokerage transaction costs - translation of German "Hin und her macht Taschen leer"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/44492/what-is-an-asymmetric-wheel-and-why-would-you-use-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is an asymmetric wheel and why would you use it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/92227/how-can-i-convince-players-not-to-offload-a-seemingly-useless-weapon" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I convince players not to offload a seemingly useless weapon?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/277185/can-a-50-hz-220-vac-transformer-work-on-40-hz-180vac" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a 50 Hz, 220 VAC transformer work on 40 Hz, 180VAC?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-wordpress" title="WordPress Development Stack Exchange"></div><a href="http://wordpress.stackexchange.com/questions/250616/how-to-remove-slug-from-database" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:110 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to remove slug from database
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="http://music.stackexchange.com/questions/51585/how-to-remember-high-e-on-guitar-for-tuning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to remember high E on Guitar for tuning
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/333144/how-can-i-slow-down-rsync" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I slow down rsync?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/82323/re-apply-to-a-phd-position-that-is-re-posted-after-being-rejected" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Re-apply to a PhD position that is re-posted after being rejected?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/277282/proper-ways-to-disconnect-ics-during-low-power-states-to-avoid-parasitic-backfee" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Proper ways to disconnect ICs during low power states to avoid parasitic/backfeed supply
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/28337/9-year-old-received-tablet-as-gift-but-he-does-not-have-the-self-control-or-mat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    9-year-old received tablet as gift, but he does not have the self-control or maturity to own a tablet
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/159354/reindexing-rebuild-indexes-on-linked-server-tables" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Reindexing / rebuild Indexes on Linked Server tables
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/85039/since-new-york-doesnt-have-a-residential-parking-permit-system-can-a-tourist-p" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Since New York doesn't have a residential parking permit system, can a tourist park his car in Manhattan for free?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/15795869" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/15795869/ivc/7c7a');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/15795869/ivc/7c7a" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-py</div></div>
+
+
+        </div>
+    </div><script async="" src="./python - Django ModelForm to have a hidden input - Stack Overflow_files/clc.min.js"></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://stackoverflow.blog/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="https://www.stackoverflowbusiness.com/advertise">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="4">
+                Technology
+            </th>
+            <th colspan="2">
+                Life / Arts
+            </th>
+            <th colspan="2">
+                Culture / Recreation
+            </th>
+            <th colspan="2">
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://softwareengineering.stackexchange.com/" title="professionals, academics, and students working within the systems development life cycle who care about creating, delivering, and maintaining software responsibly">Software Engineering</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Wolfram Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                        <li><a href="http://crypto.stackexchange.com/" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://codereview.stackexchange.com/" title="peer programmer code reviews">Code Review</a></li>
+                        <li><a href="http://magento.stackexchange.com/" title="users of the Magento e-Commerce platform">Magento</a></li>
+                        <li><a href="http://dsp.stackexchange.com/" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                        <li><a href="http://raspberrypi.stackexchange.com/" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                        <li><a href="http://codegolf.stackexchange.com/" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://music.stackexchange.com/" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://ell.stackexchange.com/" title="speakers of other languages learning English">English Language Learners</a></li>
+                        <li><a href="http://japanese.stackexchange.com/" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                        <li><a href="http://anime.stackexchange.com/" title="anime and manga fans">Anime &amp; Manga</a></li>
+                        <li><a href="http://mechanics.stackexchange.com/" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (17)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                        <li><a href="http://cs.stackexchange.com/" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://philosophy.stackexchange.com/" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent">Stack Overflow Talent</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.12.24.1
+            </div>
+                </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('python,django,django-models,django-forms');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+                ga('create', 'UA-5620270-1');
+                
+        ga('create', 'UA-5620270-59', 'auto', 'pageData');
+        
+                ga('set', 'dimension2', '|python|django|django-models|django-forms|');                     ga('pageData.set', 'dimension2', '|python|django|django-models|django-forms|');             ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+</body></html>

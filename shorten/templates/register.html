@@ -17,10 +17,9 @@
 
     <!-- {{form.as_p}} -->
     {% for field in form %}
-    <div>
-
-        {{ field.label_tag }}{{ field }}
-        {{ field.errors }}
+    {{ field.label_tag }}{{ field }}
+    <div class="form-group {%if field.errors %}has-error{%endif%}" >
+        <h4 style="color: red">{{ field.errors }} </h4>
     </div>
 {% endfor %}
 <input class = 'btn btn-primary'type="submit" value="Sign Up" />

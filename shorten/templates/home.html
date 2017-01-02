@@ -4,15 +4,24 @@
 {%block content%}
 <h3> User logins</h3>
 <form method = "POST" action= "">{% csrf_token %}
-     <input id="name" placeholder="Username" type="text" name="username" required>
+     <!-- <input id="name" placeholder="Username" type="text" name="username" required>
      <br>
      <input id="password" placeholder="password" type="text" name="password" required>
      <br>
-     <br>
+     <br> -->
+     {%for f in form%}
+        {{f.label_tag}}
+        {{ f }}
+        {% if f.label == "Password" %}
+        <h4 style  = "color:red">{{error}}</h4>
+        {%endif%}
+        <br>
+
+
+     {%endfor%}
      <button class="btn btn-lg btn-primary" id="btn" type= "submit" value="Submit">LOG IN</button>
 </form>
-
-<h3>Or you want to register </h3>
+<h3 >register </h3>
 <form method="GET" action= "/userregister/">{% csrf_token %}
     <button class="btn btn-lg btn-primary" id="btn" type= "submit" value="Submit">register</button>
 </form>

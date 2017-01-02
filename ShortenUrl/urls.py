@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^$', userlogin, name= "userlogin"),
 
     url(r'addurl/',addurl, name= "addurl"),
+    url(r'editurl/',editurl, name= "editurl"),
+    url(r'removeurl/',removeurl, name= "removeurl"),
     url(r'(.*)/(.*)',user_redirect,name= "user_redirect"),
 
 

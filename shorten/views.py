@@ -10,17 +10,19 @@ from django.contrib import messages
 
 
 def userlogin(request):
+    form = login_form()
     if request.method  == "POST":
         username = request.POST['username']
         password = request.POST['password']
         print(username,password)
         user = authenticate(username=username, password=password)
         if not user:
-            return render(request,"home.html",{})
+            return render(request,"home.html",{"form":form,"error":"User Does not exist Or Wrong password"})
         login(request,user)
         print("user",user.username,"login success")
         return HttpResponseRedirect("/feedurl/")
-    return render(request,"home.html",{})
+
+    return render(request,"home.html",{"form":form})
 def userregister(request):
     print("!!!!")
     title = "Welcome"
@@ -56,12 +58,12 @@ def userregister(request):
 def feedurl(request):
     if request.user.is_authenticated():
         urls = URL.objects.filter(user = request.user.username)
-        print(urls)
+        # print(urls)
         new = {}
-        for i in urls:
-            a= i.url
-            if len(a)>22:
-                i.url = a[:22]+"..."
+        # for i in urls:
+        #     a= i.url
+        #     if len(a)>22:
+        #         i.url = a[:22]+"..."
 
 
         return render(request , "userurl.html",{"urls":urls})
@@ -70,14 +72,14 @@ def feedurl(request):
 def addurl(request):
     if request.method == "GET":
         # temp  = URL(user= request.user.username)
-        form = inserturl()
+        form = inserturl(user = request.user)
         return render(request , "addurl.html",{"form":form})
     else:
         print(request.POST.get("url"),request.POST.get("short"),request.user.username)
         # this select fields reference from
         # https://docs.djangoproject.com/en/1.10/topics/forms/modelforms/
         temp  = URL(user= request.user.username)
-        form = inserturl(request.POST,instance = temp)
+        form = inserturl(request.POST,instance = temp,user = request.user)
         print(form.errors.as_data())
         if form.is_valid():
             form.save()
@@ -103,3 +105,35 @@ def user_redirect(request,u,s):
 
 def auto_make_short(request):
     url = "google.com"
+
+
+
+def editurl(request):
+    if request.method == "GET":
+        url = request.GET["url"]
+        short = request.GET["short"]
+        print(url,short)
+        print("before remove",len(URL.objects.all()))
+        temp = URL(user = request.user.username)
+        temp.url = url
+        temp.short = short
+        temp = URL.objects.get(user = request.user.username,short = short)
+        temp.delete()
+        form = inserturl(initial = {"user":request.user.username , "url" :url ,  "short":short})
+        print(form)
+        print("after remove",len(URL.objects.all()))
+        return render(request , "editurl.html",{"url":url,"short":short,"form":form})
+    else:
+        temp  = URL(user= request.user.username)
+        form = inserturl(request.POST,instance = temp,user = request.user)
+        print("the form looks like",form)
+        if form.is_valid():
+            print("the form is alid")
+            form.save()
+            return redirect(feedurl)
+
+def removeurl(request):
+    short = request.GET["short"]
+    temp = URL.objects.get(user = request.user.username,short = short)
+    temp.delete()
+    return redirect(feedurl)

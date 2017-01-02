@@ -40,7 +40,7 @@ SECRET_KEY = '(62g9g=a-^k@ndddc&!_s$fk_=14e3rl=hnr^11l=2l(8%^k%2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition

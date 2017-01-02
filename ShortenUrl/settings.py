@@ -102,10 +102,10 @@ WSGI_APPLICATION = 'ShortenUrl.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd829ibnlc07rrk',                      # Or path to database file if using sqlite3.
-        'USER': 'geoqoqrypcltei',                      # Not used with sqlite3.
-        'PASSWORD': 'caa61c33afea0e09c988f198236fb70bd9381cdfe67782b0b4dbab434d9e65a2',                  # Not used with sqlite3.
-        'HOST': 'ec2-54-163-234-20.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'NAME': 'd9gau8ueapftmb',                      # Or path to database file if using sqlite3.
+        'USER': 'vjwaguvygjptpz',                      # Not used with sqlite3.
+        'PASSWORD': '366b568e9319a4186b23b6b697992fd3cfc9c0d1ac140fb95463145959c03adf',                  # Not used with sqlite3.
+        'HOST': 'ec2-54-163-234-4.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '5432',                      # Set to empty string for default.  Not used with sqlite3.
 
     }

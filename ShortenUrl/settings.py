@@ -11,6 +11,21 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import dj_database_url
+import dj_database_url
+# db_from_env = dj_database_url.config()
+db_from_env = dj_database_url.config(conn_max_age=500)
+
+#############
+
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+##############
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +38,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '(62g9g=a-^k@ndddc&!_s$fk_=14e3rl=hnr^11l=2l(8%^k%2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -76,14 +91,28 @@ WSGI_APPLICATION = 'ShortenUrl.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd829ibnlc07rrk',                      # Or path to database file if using sqlite3.
+        'USER': 'geoqoqrypcltei',                      # Not used with sqlite3.
+        'PASSWORD': 'caa61c33afea0e09c988f198236fb70bd9381cdfe67782b0b4dbab434d9e65a2',                  # Not used with sqlite3.
+        'HOST': 'ec2-54-163-234-20.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default.  Not used with sqlite3.
+
     }
 }
+DATABASES['default'].update(db_from_env)
 
-
+# DATABASES['default'] = dj_database_url.config()
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -133,6 +162,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+MEDIA_ROOT = ''
+STATIC_ROOT = ''
+MEDIA_URL = ''
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 

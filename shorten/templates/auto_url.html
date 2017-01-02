@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block content%}
+<form method="POST" action="">{% csrf_token %}
+    url:
+<input  name="url" type="text"></input>
+<br>
+<br>
+<button class="btn btn-lg btn-primary" id="btn" type= "submit" value="Submit">try</button>
+</form>
+
+<p class="bg-success">{{result}}</p>
+
+<code>
+{%endblock%}

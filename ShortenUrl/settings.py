@@ -17,7 +17,7 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 
 #############
-
+# http://stackoverflow.com/questions/29689365/auth-user-error-with-django-1-8-and-syncdb-migrate
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

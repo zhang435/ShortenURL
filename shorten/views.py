@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate,login
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import *
 from django.contrib import messages
+from shorturl import *
 # Create your views here.
 
 
@@ -56,15 +57,15 @@ def userregister(request):
 
 
 def feedurl(request):
+
     if request.user.is_authenticated():
         urls = URL.objects.filter(user = request.user.username)
         # print(urls)
-        new = {}
+        # new = {}
         # for i in urls:
         #     a= i.url
         #     if len(a)>22:
         #         i.url = a[:22]+"..."
-
 
         return render(request , "userurl.html",{"urls":urls})
 
@@ -137,3 +138,19 @@ def removeurl(request):
     temp = URL.objects.get(user = request.user.username,short = short)
     temp.delete()
     return redirect(feedurl)
+
+
+def about(request):
+    return render(request , "about.html",{})
+
+
+def auto_url(request):
+    if request.method == "GET":
+        return render(request , "auto_url.html",{})
+    else:
+        a= len(URL.objects.all())+1
+
+        ans = Shorten_encode(a)
+        result = "https://rocky-reef-93048.herokuapp.com/"+request.user.username+"/"+ans
+
+        return render(request , "auto_url.html",{"result":ans})

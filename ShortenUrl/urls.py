@@ -29,6 +29,8 @@ urlpatterns = [
     url(r'addurl/',addurl, name= "addurl"),
     url(r'editurl/',editurl, name= "editurl"),
     url(r'removeurl/',removeurl, name= "removeurl"),
+    url(r'auto_url/',auto_url, name= "auto_url"),
+    url(r'about/',about, name= "about"),
     url(r'(.*)/(.*)',user_redirect,name= "user_redirect"),
 
 
